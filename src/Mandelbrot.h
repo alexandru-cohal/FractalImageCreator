@@ -1,3 +1,7 @@
+/*
+ * This file contains the header of the Mandelbrot class used for generating the fractal.
+ */
+
 #ifndef MANDELBROT_H_
 #define MANDELBROT_H_
 
