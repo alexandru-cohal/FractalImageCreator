@@ -1,3 +1,7 @@
+/*
+ * This file contains the implementation of the Bitmap class used for writing the Bitmap file.
+ */
+
 #include <fstream>
 #include "Bitmap.h"
 #include "BitmapFileHeader.h"
