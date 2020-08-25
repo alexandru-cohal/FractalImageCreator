@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdint>
+#include <memory>
 #include "Bitmap.h"
 #include "Mandelbrot.h"
 using namespace std;
@@ -11,6 +12,8 @@ int main()
 
 	Bitmap bitmap(WIDTH, HEIGHT);
 
+	unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS + 1]{0});
+
 	for (int y = 0; y < HEIGHT; y++)
 	{
 		for (int x = 0; x < WIDTH; x++)
@@ -19,6 +22,8 @@ int main()
 			double yFractal = (y - HEIGHT/2) * 2.0/HEIGHT;
 
 			int iterations = Mandelbrot::getIterations(xFractal, yFractal);
+
+			histogram[iterations]++;
 
 			uint8_t color = (uint8_t)(256 * (double)iterations / Mandelbrot::MAX_ITERATIONS);
 
