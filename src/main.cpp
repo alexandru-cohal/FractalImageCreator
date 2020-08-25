@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdint>
 #include <memory>
+#include <math.h>
 #include "Bitmap.h"
 #include "Mandelbrot.h"
 using namespace std;
@@ -43,18 +44,23 @@ int main()
 	{
 		for (int x = 0; x < WIDTH; x++)
 		{
+			uint8_t red = 0;
+			uint8_t green = 0;
+			uint8_t blue = 0;
+
 			int iterations = fractal[y * WIDTH + x];
 
-			double hue = 0;
-
-			for (int i = 0; i <= iterations; i++)
+			if (iterations != Mandelbrot::MAX_ITERATIONS)
 			{
-				hue += ((double)histogram[i]) / total;
-			}
+				double hue = 0;
 
-			uint8_t red = 0;
-			uint8_t green = hue * 255;
-			uint8_t blue = 0;
+				for (int i = 0; i <= iterations; i++)
+				{
+					hue += ((double)histogram[i]) / total;
+				}
+
+				green = pow(255, hue);
+			}
 
 			bitmap.setPixel(x, y, red, green, blue);
 		}
