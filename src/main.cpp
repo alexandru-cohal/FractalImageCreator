@@ -12,7 +12,7 @@ int main()
 
 	Bitmap bitmap(WIDTH, HEIGHT);
 
-	unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS + 1]{0});
+	unique_ptr<int[]> histogram(new int[Mandelbrot::MAX_ITERATIONS]{0});
 
 	for (int y = 0; y < HEIGHT; y++)
 	{
@@ -23,7 +23,10 @@ int main()
 
 			int iterations = Mandelbrot::getIterations(xFractal, yFractal);
 
-			histogram[iterations]++;
+			if (iterations != Mandelbrot::MAX_ITERATIONS)
+			{
+				histogram[iterations]++;
+			}
 
 			uint8_t color = (uint8_t)(256 * (double)iterations / Mandelbrot::MAX_ITERATIONS);
 
