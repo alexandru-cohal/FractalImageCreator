@@ -23,7 +23,7 @@ The final project of the **Learn Advanced C++ Programming** course from **Udemy*
 		 - Changing the *MAX_LIMIT* parameter from *Mandelbrot.h* which represents the maximum limit of the absolute value of the complex number on which the each pixel of the fractal is defined
 		 - The iterations intervals and the associated colors for their ends from *main.cpp*
 		 - The zooms list from *main.cpp* for centering and scaling on different areas of the fractal
- - Results:
+ - Results: \
 ![Screenshot1](Results/Fractal1.bmp)
 ![Screenshot2](Results/Fractal2.bmp)
 ![Screenshot3](Results/Fractal3.bmp)
