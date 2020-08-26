@@ -5,6 +5,7 @@
 
 #include "FractalCreator.h"
 #include "Mandelbrot.h"
+#include "Zoom.h"
 
 FractalCreator::FractalCreator(int width, int height):
 	m_width(width), m_height(height),
@@ -18,6 +19,15 @@ FractalCreator::FractalCreator(int width, int height):
 
 FractalCreator::~FractalCreator()
 {
+}
+
+void FractalCreator::run(string name)
+{
+	calculateIteration();
+	calculateTotalIterations();
+	drawFractal();
+
+	writeBitmap(name);
 }
 
 void FractalCreator::calculateIteration()
@@ -50,6 +60,10 @@ void FractalCreator::calculateTotalIterations()
 
 void FractalCreator::drawFractal()
 {
+	RGB startColor(0, 0, 20);
+	RGB endColor(255, 128, 74);
+	RGB colorDiff = endColor - startColor;
+
 	for (int y = 0; y < m_height; y++)
 	{
 		for (int x = 0; x < m_width; x++)
@@ -69,7 +83,9 @@ void FractalCreator::drawFractal()
 					hue += ((double)m_histogram[i]) / m_total;
 				}
 
-				green = hue * 255;
+				red = startColor.r + colorDiff.r * hue;
+				green = startColor.g + colorDiff.g * hue;
+				blue = startColor.b + colorDiff.b * hue;
 			}
 
 			m_bitmap.setPixel(x, y, red, green, blue);

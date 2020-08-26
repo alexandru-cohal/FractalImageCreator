@@ -13,6 +13,7 @@
 #include "Bitmap.h"
 #include "ZoomList.h"
 #include "Mandelbrot.h"
+#include "RGB.h"
 using namespace std;
 
 class FractalCreator
@@ -26,15 +27,17 @@ private:
 	ZoomList m_zoomList;
 	int m_total{0};
 
-public:
-	FractalCreator(int width, int height);
-	virtual ~FractalCreator();
-
+private:
 	void calculateIteration();
 	void calculateTotalIterations();
 	void drawFractal();
-	void addZoom(const Zoom& zoom);
 	void writeBitmap(string name);
+
+public:
+	FractalCreator(int width, int height);
+	virtual ~FractalCreator();
+	void addZoom(const Zoom& zoom);
+	void run(string name);
 };
 
 #endif /* FRACTALCREATOR_H_ */
