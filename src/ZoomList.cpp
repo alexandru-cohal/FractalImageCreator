@@ -1,5 +1,5 @@
 /*
- * This file contains the implementation of the ZoomList class.
+ * This file contains the implementation of the ZoomList class used for manipulating a list of "zooms".
  */
 
 #include "ZoomList.h"

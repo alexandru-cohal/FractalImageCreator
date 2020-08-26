@@ -1,3 +1,7 @@
+/*
+ * This file contains the implementation of the RGB class used for manipulating colors in the RGB format.
+ */
+
 #include "RGB.h"
 
 RGB::RGB(double r, double g, double b): r(r), g(g), b(b)

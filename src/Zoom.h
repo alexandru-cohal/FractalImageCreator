@@ -1,5 +1,6 @@
 /*
- * This file contains the declaration and the implementation of the Zoom class.
+ * This file contains the declaration and the implementation of the Zoom class used for
+ * manipulating a "zoom" (i.e. the pixel's coordinates where the zoom is desired and the scale).
  */
 
 #ifndef ZOOM_H_

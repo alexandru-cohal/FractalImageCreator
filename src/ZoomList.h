@@ -1,5 +1,5 @@
 /*
- * This file contains the declaration of the ZoomList class.
+ * This file contains the declaration of the ZoomList class used for manipulating a list of "zooms".
  */
 
 #ifndef ZOOMLIST_H_

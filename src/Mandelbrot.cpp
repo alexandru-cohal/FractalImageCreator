@@ -1,18 +1,18 @@
 /*
- * This file contains the implementation of the Mandelbrot class used for generating the fractal.
+ * This file contains the implementation of the Mandelbrot class used for calculating the
+ * number of iterations for each pixel of the fractal.
  */
 
 #include <complex>
 #include "Mandelbrot.h"
 using namespace std;
 
-Mandelbrot::Mandelbrot() {
-	// TODO Auto-generated constructor stub
-
+Mandelbrot::Mandelbrot()
+{
 }
 
-Mandelbrot::~Mandelbrot() {
-	// TODO Auto-generated destructor stub
+Mandelbrot::~Mandelbrot()
+{
 }
 
 int Mandelbrot::getIterations(double x, double y)
@@ -26,7 +26,7 @@ int Mandelbrot::getIterations(double x, double y)
 	{
 		z = z * z + c;
 
-		if (abs(z) > 2) // Limit the increase to not reach infinity
+		if (abs(z) > MAX_LIMIT) // Limit the increase to not reach infinity
 		{
 			break;
 		}

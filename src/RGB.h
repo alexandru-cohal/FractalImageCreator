@@ -1,12 +1,18 @@
+/*
+ * This file contains the declaration of the RGB class used for manipulating colors in the RGB format.
+ */
+
 #ifndef RGB_H_
 #define RGB_H_
 
-struct RGB
+class RGB
 {
+public:
 	double r;
 	double g;
 	double b;
 
+public:
 	RGB(double r, double g, double b);
 };
 

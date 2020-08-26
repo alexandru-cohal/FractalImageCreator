@@ -59,7 +59,7 @@ int FractalCreator::getRange(int iterations) const
 {
 	int range = 0;
 
-	for (int i = 1; i < m_ranges.size(); i++)
+	for (unsigned int i = 1; i < m_ranges.size(); i++)
 	{
 		range = i;
 
