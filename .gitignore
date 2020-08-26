@@ -3,3 +3,4 @@ Debug/*
 .gitignore.swp
 .project
 .settings/language.settings.xml
+/Debug/
